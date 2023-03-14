@@ -24,9 +24,10 @@ In this project, three datasets formated as json files will going to be used. Th
 Buy-one-get-one (BOGO) is a type of promotional offer where a customer can receive a free product or service when they purchase another item. The offer usually requires the customer to buy one item at full price and then get a second item of equal or lesser value for free. A discount is a type of promotional offer where a customer can receive a reduced price on a product or service. The offer typically involves a percentage or dollar amount off the regular price. 
 An informational offer is a type of promotional offer that provides customers with valuable information about a product or service without any direct reward or incentive. The offer may involve providing a free ebook, whitepaper, or webinar that educates customers about the features, benefits, and use cases of a product or service.
 
-Datasets description:
+### Datasets description:
 
-profile.json
+**profile.json**
+
 Rewards program users (17000 users x 5 fields)
 
 - gender: (categorical) M, F, O, or null
@@ -34,7 +35,9 @@ Rewards program users (17000 users x 5 fields)
 - id: (string/hash)
 - became_member_on: (date) format YYYYMMDD
 - income: (numeric)
-- portfolio.json
+
+**portfolio.json**
+
 Offers sent during 30-day test period (10 offers x 6 fields)
 
 - reward: (numeric) money awarded for the amount spent
@@ -43,7 +46,9 @@ Offers sent during 30-day test period (10 offers x 6 fields)
 - duration: (numeric) time for offer to be open, in days
 - offer_type: (string) bogo, discount, informational
 - id: (string/hash)
-- transcript.json
+
+**transcript.json**
+
 Event log (306648 events x 4 fields)
 
 - person: (string/hash)
@@ -52,7 +57,7 @@ Event log (306648 events x 4 fields)
 - offer id: (string/hash) not associated with any "transaction"
 - amount: (numeric) money spent in "transaction"
 - reward: (numeric) money gained from "offer completed"
-time: (numeric) hours after start of test
+- time: (numeric) hours after start of test
 
 
 ## Problem Statement
