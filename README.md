@@ -19,6 +19,50 @@ their customers better by dividing the customer base into distinct and internal 
 features [1]. Therefore, segmentation helps an organization to provide better products, offers, or solutions
 and through that increase loyalty, brand reputation, competitive advantage, and growth.
 
+In this project, three datasets formated as json files will going to be used. The profile.json contains informaion about customers, the portfolio.json contains information about offers and the transcript.json about events such as receiving offers, opening offers, and making purchases. The main objective is to identify which groups of people are most responsive to each type of offer, and how best to present each type of offer. There are three possible offers: buy-one-get-one (BOGO), discount, and informational. 
+
+Buy-one-get-one (BOGO) is a type of promotional offer where a customer can receive a free product or service when they purchase another item. The offer usually requires the customer to buy one item at full price and then get a second item of equal or lesser value for free.
+
+A discount is a type of promotional offer where a customer can receive a reduced price on a product or service. The offer typically involves a percentage or dollar amount off the regular price. 
+
+An informational offer is a type of promotional offer that provides customers with valuable information about a product or service without any direct reward or incentive. The offer may involve providing a free ebook, whitepaper, or webinar that educates customers about the features, benefits, and use cases of a product or service.
+
+Datasets description:
+
+profile.json
+Rewards program users (17000 users x 5 fields)
+
+gender: (categorical) M, F, O, or null
+age: (numeric) missing value encoded as 118
+id: (string/hash)
+became_member_on: (date) format YYYYMMDD
+income: (numeric)
+portfolio.json
+Offers sent during 30-day test period (10 offers x 6 fields)
+
+reward: (numeric) money awarded for the amount spent
+channels: (list) web, email, mobile, social
+difficulty: (numeric) money required to be spent to receive reward
+duration: (numeric) time for offer to be open, in days
+offer_type: (string) bogo, discount, informational
+id: (string/hash)
+transcript.json
+Event log (306648 events x 4 fields)
+
+person: (string/hash)
+event: (string) offer received, offer viewed, transaction, offer completed
+value: (dictionary) different values depending on event type
+offer id: (string/hash) not associated with any "transaction"
+amount: (numeric) money spent in "transaction"
+reward: (numeric) money gained from "offer completed"
+time: (numeric) hours after start of test
+
+
+
+
+
+
+
 ## Problem Statement
 
 This project goal is to segment customers based on their traits, preferences and behaviors, with that in mind this project tasks are diveded as
