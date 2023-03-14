@@ -29,12 +29,12 @@ Datasets description:
 profile.json
 Rewards program users (17000 users x 5 fields)
 
-gender: (categorical) M, F, O, or null
-age: (numeric) missing value encoded as 118
-id: (string/hash)
-became_member_on: (date) format YYYYMMDD
-income: (numeric)
-portfolio.json
+- gender: (categorical) M, F, O, or null
+- age: (numeric) missing value encoded as 118
+- id: (string/hash)
+- became_member_on: (date) format YYYYMMDD
+- income: (numeric)
+- portfolio.json
 Offers sent during 30-day test period (10 offers x 6 fields)
 
 reward: (numeric) money awarded for the amount spent
