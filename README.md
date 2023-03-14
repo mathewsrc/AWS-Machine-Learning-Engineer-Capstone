@@ -3,6 +3,9 @@ AWS Machine Learning Enginner Nanodegree
 
 TODO: replace all texts
 
+Example:
+https://sagemaker-examples.readthedocs.io/en/latest/introduction_to_applying_machine_learning/US-census_population_segmentation_PCA_Kmeans/sagemaker-countycensusclustering.html
+
 # Definition
 
 ## Project Overview
