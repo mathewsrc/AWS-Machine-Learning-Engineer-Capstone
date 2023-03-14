@@ -7,23 +7,26 @@ TODO: replace all texts
 
 ## Project Overview
 
-Vision loss is a problem that affects people all around the world. As computers are getting better at
-understanding images due to advances in computer vision, the concept of a virtual assistant for the
-blind that could read text , identify/spot objects , or even describe a whole scene in natural language is1 2 3
-becoming increasingly realistic.In this project, I created an Android application capable of reading aloud everyday text (e.g. product
-labels, price tags, text on clothing). The application uses a classifier trained using the MS-COCO and4COCO-Text datasets to look for text and uses Google Cloud Vision to extract the text.5 The project was inspired by this Reddit thread.
+Customers are the most important asset of an organization. Without customers, a business cannot 
+survive or even exist. That is why an organization should have in its priorities the provision 
+of the best customer experience and as result understand better its current and future customers. One way 
+to better understand customers is by using techniques such as customer segmentation. Segmentation is an 
+approach based on customers' traits, preferences, and behaviors that help businesses to better 
+understand their customers better by dividing the customer base into distinct and internally homogeneous
+groups [1]. Therefore, segmentation helps an organization to provide better products, offers, or solutions
+and through that increase loyalty, brand reputation, competitive advantage, and growth.
 
 ## Problem Statement
 
-The goal is to create a general text-reader running on Android smartphones; the tasks involved are the
-following:
-1. Download and preprocess the MS-COCO and COCO-Text data
-2. Train a classifier that can determine if an image contains text
-3. Make the classifier run on Android
-4. Make the app extract the text (if any) using Google Cloud Vision
-5. Make the app speak the extracted text aloud
-The final application is expected to be useful for reading product labels, price tags, and other kinds of
-short, printed text.
+This project goal is to segment customers based on their traits, preferences and behaviors, with that in mind this project tasks are diveded as
+follers:
+1. Download and upload Starbucks data to AWS S3
+2. Preprocess data in AWS SageMaker
+3. Train a unsupervised models to identify customer segments
+4. Train a supervised classification model from unsupervised result to classify new customers
+6. Deploy the supervised classification in a AWS SageMaker endpoint
+7.  
+The final model is expected to be able to classify new customers and provide the best promotional offers.
 
 
 ## Metrics
