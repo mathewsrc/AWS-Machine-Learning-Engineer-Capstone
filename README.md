@@ -68,8 +68,9 @@ follers:
 2. Preprocess data in AWS SageMaker
 3. Train a unsupervised models to identify customer segments
 4. Train a supervised classification model from unsupervised result to classify new customers
-6. Deploy the supervised classification in a AWS SageMaker endpoint
-7.  
+6. Deploy the supervised and unsupervised models in AWS SageMaker endpoint
+7. Test the supervised model 
+
 The final model is expected to be able to classify new customers and provide the best promotional offers.
 
 
