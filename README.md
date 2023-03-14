@@ -12,8 +12,8 @@ survive or even exist. That is why an organization should have in its priorities
 of the best customer experience and as result understand better its current and future customers. One way 
 to better understand customers is by using techniques such as customer segmentation. Segmentation is an 
 approach based on customers' traits, preferences, and behaviors that help businesses to better 
-understand their customers better by dividing the customer base into distinct and internally homogeneous
-groups [1]. Therefore, segmentation helps an organization to provide better products, offers, or solutions
+understand their customers better by dividing the customer base into distinct and internally 
+groups whose share similar features [1]. Therefore, segmentation helps an organization to provide better products, offers, or solutions
 and through that increase loyalty, brand reputation, competitive advantage, and growth.
 
 ## Problem Statement
