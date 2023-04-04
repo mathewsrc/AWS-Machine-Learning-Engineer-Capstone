@@ -41,11 +41,11 @@ def test(model, X_test, y_test):
     report = classification_report(y_test, y_pred)
     
     fpr, tpr, _ = roc_curve(y_test, model.predict_proba(X_test)[:, 1])
-    auc = auc(fpr, tpr)
+    lr_auc = auc(fpr, tpr)
     
     print("Accuracy: {:.3f}".format(acc))
     print("Classification Report:\n", report)
-    print("AUC: {:.3f}".format(auc))
+    print("AUC: {:.3f}".format(lr_auc))
              
 def model_fn(model_dir):
         """ Deserialize fitted model from model_dir."""
