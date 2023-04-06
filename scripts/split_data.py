@@ -20,6 +20,8 @@ def split(df, target, use_smote=False, test_size=0.20, val_size=0.10, random_sta
 
     print("X_train shape:", X_train.shape)
     print("y_train shape:", y_train.shape)
+    print("X_val shape:", X_val.shape)
+    print("y_val shape:", y_val.shape)
     print("X_test shape:", X_test.shape)
     print("y_test shape:", y_test.shape)
     
