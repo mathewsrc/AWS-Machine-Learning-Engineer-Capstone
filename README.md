@@ -2,6 +2,8 @@
 AWS Machine Learning Enginner Nanodegree
 
 ```
+sudo yum install -y zip
+
 mkdir packages
 
 cd packages 
@@ -22,9 +24,20 @@ pip install --no-deps numpy -t .
 
 pip install --no-deps polars -t .
 
+pip install --no-deps scipy -t .
+
 rm -rf *dist-info
 
+rm -rf scipy.libs/
+
 du -sh
+
+cd ..
+
+zip -r train_test_split_lambda.zip python
+
+aws s3 cp train_test_split_layer.zip s3://sagemaker-us-east-1-484401254725/scikit-churn-prediction/lambdalayers/
+
 ```
 
 
