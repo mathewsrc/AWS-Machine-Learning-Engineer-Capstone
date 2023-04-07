@@ -5,6 +5,7 @@ from sklearn.metrics import (
     roc_curve,
     auc,
 )
+from sklearn.model_selection import cross_val_score, RepeatedStratifiedKFold
 import joblib
 import polars as pl
 import argparse
@@ -43,18 +44,22 @@ def train(X_train, y_train, args):
     Returns:
     model: trained random forest model.
     """
+    
+    print(f"--n_estimators: {args.n_estimators}")
+    print(f"--max_depth: {args.max_depth}")
+    print(f"--min_samples_split: {args.min_samples_split}")
+    print(f"--min_samples_leaf: {args.min_samples_leaf}")
+    print(f"--criterion: {args.criterion}")
+    
     # Create a random forest model
-    if args.hpo:
-        model = RandomForestClassifier(
+    model = RandomForestClassifier(
                                        random_state=42, 
                                        n_estimators=args.n_estimators,
                                        max_depth=args.max_depth,
                                        min_samples_split=args.min_samples_split,
-                                       min_samples_leaf=args.min_samples_leaf
+                                       min_samples_leaf=args.min_samples_leaf,
                                        criterion=args.criterion)
-    else:
-            model = RandomForestClassifier(random_state=42)
-
+   
     # Train the model on the training data
     model.fit(X_train, y_train)
 
@@ -83,7 +88,8 @@ def test(model, X_test, y_test):
     y_pred = model.predict(X_test)
 
     # Calculate accuracy and classification report
-    acc = accuracy_score(y_test, y_pred)
+    cv = RepeatedStratifiedKFold(n_splits=9, n_repeats=3, random_state=42)
+    acc = cross_val_score(model, X_test, y_test, cv=cv, scoring="accuracy").mean()
     report = classification_report(y_test, y_pred)
 
     # Calculate AUC using ROC curve and probability estimates
@@ -105,7 +111,15 @@ if __name__ == "__main__":
     parser.add_argument("--model_dir", type=str, default=os.environ["SM_MODEL_DIR"])
     parser.add_argument("--train", type=str, default=os.environ["SM_CHANNEL_TRAIN"])
     parser.add_argument("--test", type=str, default=os.environ["SM_CHANNEL_TEST"])
-
+    #parser.add_argument("--hpo", type=bool, default=False)
+    parser.add_argument("--n_estimators", type=int, default=100)
+    parser.add_argument("--max_depth", type=int, default=None)
+    parser.add_argument("--min_samples_split", type=int, default=2)
+    parser.add_argument("--min_samples_leaf", type=int, default=1)
+    parser.add_argument("--criterion", type=str, default="gini")
+    
+    
+                                 
     args = parser.parse_args()
 
     # Read transform datasets from S3

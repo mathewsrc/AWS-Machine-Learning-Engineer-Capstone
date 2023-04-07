@@ -5,6 +5,7 @@ from sklearn.metrics import (
     roc_curve,
     auc,
 )
+from sklearn.model_selection import cross_val_score, RepeatedStratifiedKFold
 import joblib
 import polars as pl
 import argparse
@@ -43,13 +44,12 @@ def train(X_train, y_train, args):
     Returns:
     model: trained logistic regression model.
     """
+    print(f"--C: {args.c_reg}")
+    print(f"--penalty: {args.penalty}")
     
-    if args.hpo:
-        # Create a logistic regression model
-        model = LogisticRegression(random_state=42, C=args.C, penalty=args.penalty)
-    else:
-        model = LogisticRegression(random_state=42)
-        
+    # Create a logistic regression model
+    model = LogisticRegression(random_state=42, C=args.c_reg, penalty=args.penalty)
+ 
     # Train the model on the training data
     model.fit(X_train, y_train)
 
@@ -78,8 +78,9 @@ def test(model, X_test, y_test):
     y_pred = model.predict(X_test)
 
     # Calculate accuracy and classification report
-    acc = accuracy_score(y_test, y_pred)
-    report = classification_report(y_test, y_pred)
+    cv = RepeatedStratifiedKFold(n_splits=9, n_repeats=3, random_state=42)
+    acc = cross_val_score(model, X_test, y_test, cv=cv, scoring="accuracy").mean()    
+    report =  classification_report(y_test, y_pred)
 
     # Calculate AUC using ROC curve and probability estimates
     fpr, tpr, _ = roc_curve(y_test, model.predict_proba(X_test)[:, 1])
@@ -100,7 +101,9 @@ if __name__ == "__main__":
     parser.add_argument("--model_dir", type=str, default=os.environ["SM_MODEL_DIR"])
     parser.add_argument("--train", type=str, default=os.environ["SM_CHANNEL_TRAIN"])
     parser.add_argument("--test", type=str, default=os.environ["SM_CHANNEL_TEST"])
-    parser.add_argument("--hpo", type=bool, default=False)
+    #parser.add_argument("--hpo", type=bool, default=False)
+    parser.add_argument("--c_reg", type=float, default=1.0)
+    parser.add_argument("--penalty", type=str, default="l2")
 
     args = parser.parse_args()
 

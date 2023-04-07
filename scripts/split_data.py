@@ -1,12 +1,12 @@
 from sklearn.model_selection import train_test_split
 import polars as pl
-from imblearn.over_sampling import SMOTENC, SMOTE
+from imblearn.over_sampling import SMOTENC
 
 def split(df, target, use_smote=False, test_size=0.20, val_size=0.10, random_state=42):
     country_idx = df.find_idx_by_name("country")
     gender_idx = df.find_idx_by_name("gender")
     
-    X = df.select(pl.all().exclude(target)).to_pandas()
+    X = df.drop(target).to_pandas()
     y = df.select(target).to_pandas()
     
     if use_smote:
