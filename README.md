@@ -30,15 +30,19 @@ kaggle                          1.5.13
 ### Setup kaggle API
 
 1 - Create a new account in kaggle.com if you do not have one 
+
 ![kaggle1](https://user-images.githubusercontent.com/94936606/230730795-348c16ca-2298-4f9c-add7-52bceb578b39.PNG)
 
 2 - Access account settings
+
 ![kaggle2](https://user-images.githubusercontent.com/94936606/230730837-2b691a9a-a232-4609-af5a-640ed1902b31.PNG)
 
 3 - Click on 'Create New API Token'
+
 ![kaggle3](https://user-images.githubusercontent.com/94936606/230730871-298fb652-44c6-4f7c-aea4-f3dedb50e64d.PNG)
 
 4- Upload the `kaggle.json` to SageMaker
+
 ![sagemaker1](https://user-images.githubusercontent.com/94936606/230730938-dcba94d6-7f1e-47bb-b495-dec20037a832.PNG)
 
 4- Run the `setup_kaggle_api.sh` script on terminal or run in a notebook cell `!bash setup_kaggle_api.sh`
