@@ -4,10 +4,15 @@ AWS Machine Learning Enginner Nanodegree
 ## AWS features used in this project
 
 [SageMaker](https://aws.amazon.com/sagemaker/)
+
 [SageMaker Hyperparameter Tuning](https://sagemaker.readthedocs.io/en/v1.44.4/tuner.html)
+
 [SagaMaker Training Jobs](https://sagemaker.readthedocs.io/en/v2.145.0/overview.html#prepare-a-training-script)
+
 [SageMaker Batch Transfom](https://sagemaker.readthedocs.io/en/v2.145.0/overview.html#sagemaker-batch-transform)
+
 [SageMaker Inference Pipelines](https://sagemaker.readthedocs.io/en/v2.145.0/overview.html#inference-pipelines)
+
 [AWS S3](https://aws.amazon.com/s3/)
 
 
