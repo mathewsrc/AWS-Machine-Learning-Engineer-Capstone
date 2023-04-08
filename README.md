@@ -24,6 +24,8 @@ kaggle                          1.5.13
 Notebook enviroment
 
 <img src="https://user-images.githubusercontent.com/94936606/230729952-7bd1afa7-f09a-4fce-bb36-521a10c327f8.png" width=60% height=60%)
+     
+<img src="https://user-images.githubusercontent.com/94936606/218581977-57d269fe-592f-4cc1-8812-1bc5d395d758.png" width=30% height=30%>
 
 # Definition
 
