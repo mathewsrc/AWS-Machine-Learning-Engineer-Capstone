@@ -1,5 +1,6 @@
 # AWS-Machine-Learning-Engineer-Capstone
-AWS Machine Learning Enginner Nanodegree
+
+## Churn Prediction
 
 Customer churn, also referred to as customer attrition, poses a significant challenge for businesses. It arises when customers discontinue the use of a company's products or services, and high churn rates can have adverse effects on a company's revenue and profitability. To tackle this issue, machine learning algorithms can be leveraged to identify the factors that contribute to churn. Churn models are designed to identify early warning signs and recognize customers who are more likely to voluntarily leave. As part of this project, I will be delving into three different algorithms: logistic regression, decision tree, and random forest. Through the application of these three powerful tools, I aim to develop a highly accurate classifier that can predict which customers are likely to churn and which are not.
 
@@ -72,60 +73,3 @@ V. S. Spelmen and R. Porkodi, "A Review on Handling Imbalanced Data," in Proceed
 N. V. Chawla, K. W. Bowyer, and W. P. Kegelmeyer, "SMOTE: synthetic minority over-sampling technique," Journal of Artificial Intelligence Research, vol. 16, pp. 321-357, 2002.
 
 R. Kohavi, "A study of cross-validation and bootstrap for accuracy estimation and model selection," in Proceedings of the 14th International Joint Conference on Artificial Intelligence (IJCAI'95), San Francisco, CA, USA, 1995, pp. 1137-1143.
-
-
-# Definition
-
-## Project Overview
-
-
-### Datasets description:
-
-
-
-
-## Problem Statement
-
-
-## Metrics
-
-
-# Analysis
-
-
-
-
-## Exploratory Visualization
-
-
-
-
-## Algorithms and Techniques
-
-
-
-
-## Benchmark 
-
-
-
-
-# Methodology
-
-## Data Preprocessing
-
-
-## Implementation
-
-
-
-## Results
-
-Model Evaluation and Validation
-
-
-# Conclusion
-
-Reflection
-
-Improvement
