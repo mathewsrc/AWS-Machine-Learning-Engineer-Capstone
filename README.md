@@ -9,7 +9,8 @@ Customer churn, also referred to as customer attrition, poses a significant chal
 
 ## Project overview
 
-![capstone drawio (7)](https://user-images.githubusercontent.com/94936606/230945107-17f9ba02-6413-4589-a9e5-7032d314d084.png)
+![capstone drawio (13)](https://user-images.githubusercontent.com/94936606/231004594-a071aca6-845f-41c4-8159-45b4a5127ab1.png)
+
 
 ## Package Version
 
